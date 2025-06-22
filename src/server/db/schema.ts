@@ -17,6 +17,7 @@ const users = pgTable("user", {
   email: text("email").unique(),
   emailVerified: timestamp("emailVerified", { mode: "date" }),
   image: text("image"),
+  createAt: timestamp("createAt", { mode: "date" }).notNull().$defaultFn(() => new Date()),
 })
 
 const accounts = pgTable(
