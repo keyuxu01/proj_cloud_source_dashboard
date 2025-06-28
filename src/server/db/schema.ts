@@ -1,10 +1,11 @@
+import { sql } from "drizzle-orm"
 import {
-    boolean,
-    integer,
-    pgTable,
-    primaryKey,
-    text,
-    timestamp,
+  boolean,
+  integer,
+  pgTable,
+  primaryKey,
+  text,
+  timestamp,
 } from "drizzle-orm/pg-core"
 import type { Adapter } from "next-auth/adapters"
  
@@ -17,7 +18,13 @@ const users = pgTable("user", {
   email: text("email").unique(),
   emailVerified: timestamp("emailVerified", { mode: "date" }),
   image: text("image"),
-  createAt: timestamp("createAt", { mode: "date" }).notNull().$defaultFn(() => new Date()),
+  /**
+   * ✅ 最佳实践建议
+   * 💡 对于数据库必须存在默认值的字段（特别是 not null 的），建议始终使用 .default(sql...) 来设置数据库级别默认值。
+   *
+   * ❌ 避免只用 $defaultFn(() => new Date())，因为它只在 TypeScript 层插入数据时有效，不适用于直接执行 SQL（比如 NextAuth 插入用户时）。
+   */
+  createAt: timestamp("createAt", { mode: "date" }).notNull().default(sql`CURRENT_TIMESTAMP`),
 })
 
 const accounts = pgTable(
@@ -95,6 +102,6 @@ const verificationTokens = pgTable(
 
 
 export {
-    accounts, authenticators, sessions, users, verificationTokens
+  accounts, authenticators, sessions, users, verificationTokens
 }
 

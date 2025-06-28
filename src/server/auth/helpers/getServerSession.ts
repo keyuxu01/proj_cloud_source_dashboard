@@ -1,7 +1,7 @@
 import type {
-    GetServerSidePropsContext,
-    NextApiRequest,
-    NextApiResponse,
+  GetServerSidePropsContext,
+  NextApiRequest,
+  NextApiResponse,
 } from "next";
 import { getServerSession } from "next-auth";
 import { AUTH_OPTIONS } from "../constants";
