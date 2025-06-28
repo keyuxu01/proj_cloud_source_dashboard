@@ -7,7 +7,20 @@
     "build": "next build",
     "start": "next start",
     "cz": "git cz",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
+  },
+  "scriptsComments": {
+    "dev": "Start the development server with Turbopack",
+    "build": "Build the application for production",
+    "start": "Start the production server",
+    "cz": "Interactive commit with commitizen (emoji commits)",
+    "lint": "Run ESLint to check code quality",
+    "db:generate": "Generate migration files based on schema changes",
+    "db:migrate": "Apply database migrations",
+    "db:studio": "Launch Drizzle Studio (database GUI) at http://localhost:4983"
   },
   "dependencies": {
     "@auth/drizzle-adapter": "^1.9.1",
