@@ -1,15 +1,14 @@
-import { testRouter } from "@/utils";
+import { appRouter, createTRPCContext } from "@/server/trpc";
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 import { NextRequest } from "next/server";
 
-// add adapter to the tRPC handler
+// tRPC API handler
 const trpcHandler = (req: NextRequest) => {
-  // Handle the request with the tRPC router
   return fetchRequestHandler({
     endpoint: "/api/trpc",
     req,
-    router: testRouter,
-    createContext: () => ({}), // Context can be used to pass data to procedures
+    router: appRouter,
+    createContext: createTRPCContext,
   });
 };
 

@@ -1,5 +1,26 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Prerequisites
+
+- **Node.js**: Version 18.0.0 or higher
+- **npm**: Version 8.0.0 or higher
+- **PostgreSQL**: Database server
+
+You can check your versions with:
+
+```bash
+node --version
+npm --version
+```
+
+If you're using nvm, you can use the included `.nvmrc` file:
+
+```bash
+nvm use
+```
+
+> 🚨 **Having setup issues?** Check out [SETUP_ISSUES.md](./SETUP_ISSUES.md) for common problems and solutions.
+
 ## Getting Started
 
 First, run the development server:
@@ -37,6 +58,7 @@ npm run db:studio
 ```
 
 Drizzle Studio will be available at [http://localhost:4983](http://localhost:4983) where you can:
+
 - View and edit table data
 - Explore database schema
 - Run SQL queries
@@ -62,6 +84,7 @@ For detailed exploration and learning about this project's architecture and impl
 📚 **[Next.js Full-Stack Project Guide](https://www.notion.so/Nextjs-20c867a3b6fb80e8b667f77484883dda)**
 
 This comprehensive guide covers:
+
 - Project setup and architecture
 - Next.js 15 with App Router
 - Drizzle ORM integration

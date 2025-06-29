@@ -1,4 +1,4 @@
-import { UserSession } from "@/components/business";
+import { TRPCAdvancedTest, TRPCTest, UserSession } from "@/components/business";
 import { Button } from "@/components/ui";
 import { OAUTH_SIGN_IN_URL } from "@/constants/path";
 import { getServerSession } from "@/server/auth";
@@ -15,9 +15,11 @@ export default async function Home() {
   }
 
   return (
-    <div className="h-screen">
-      root page
+    <div className="h-screen p-4 space-y-4">
+      <h1 className="text-2xl font-bold">Dashboard</h1>
       <UserSession />
+      <TRPCTest />
+      <TRPCAdvancedTest />
       <Button>click</Button>
     </div>
   );
