@@ -1,6 +1,16 @@
 {
-  "name": "proj_cloud_source_dashboard",
+  "name": "nextjs-trpc-nextauth-template",
   "version": "0.1.0",
+  "description": "A production-ready Next.js template with tRPC, NextAuth, Drizzle ORM, and TypeScript. Features modular architecture, type safety, and comprehensive documentation.",
+  "keywords": [
+    "nextjs",
+    "trpc",
+    "nextauth",
+    "drizzle",
+    "typescript",
+    "template",
+    "fullstack"
+  ],
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
